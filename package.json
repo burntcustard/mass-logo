@@ -1,10 +1,18 @@
 {
   "name": "mass-logo",
   "version": "1.0.0",
-  "description": "<p xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:dct=\"http://purl.org/dc/terms/\"><a property=\"dct:title\" rel=\"cc:attributionURL\" href=\"https://github.com/burntcustard/mass-logo\">Mass Logo</a> by <a rel=\"cc:attributionURL dct:creator\" property=\"cc:attributionName\" href=\"https://burnt.io/\">John Evans</a> is licensed under <a href=\"http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\">CC BY-NC 4.0<img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1\"></a></p>",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "semistandard --verbose | snazzy"
+  },
+  "devDependencies": {
+    "semistandard": "^17.0.0",
+    "snazzy": "^9.0.0",
+    "vite": "^4.4.5"
   },
   "repository": {
     "type": "git",

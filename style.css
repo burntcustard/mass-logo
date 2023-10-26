@@ -1,0 +1,79 @@
+:root {
+  --mass-scarlet: #F9372B;
+}
+
+body {
+  margin: 0;
+  background-color: #1e1e1e;
+}
+
+#mass-logo {
+  width: 242px;
+  height: 229px;
+  display: grid;
+}
+
+#mass-logo > * {
+  grid-row: 1;
+  grid-column: 1;
+  width: 60.34%; /* approx 146/242 in % */
+  aspect-ratio: 1;
+  border-radius: 50%;
+  rotate: var(--rotation);
+  background:
+    conic-gradient(
+      var(--color-start) 0,
+      var(--color-end) calc(50.1%), /* >50% so no gaps */
+      transparent 0
+    );
+  mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
+}
+
+#mass-logo > *:nth-child(1) {
+  background:
+    conic-gradient(
+      #872363,
+      #6D1E6F,
+      #6D1E6F,
+      #261299,
+      #261299
+    );
+  --rotation: -90deg;
+  align-self: end;
+  justify-self: end;
+}
+
+#mass-logo > *:nth-child(2) {
+  --color-start: #6D1E6F;
+  --color-end: color-mix(in srgb, var(--mass-scarlet), #6D1E6F 50%);
+  --rotation: 30deg;
+  align-self: end;
+}
+
+#mass-logo > *:nth-child(3) {
+  --color-start: #BF2B4B;
+  --color-end: color-mix(in srgb, var(--mass-scarlet), #6D1E6F 50%);
+  --rotation: 210deg;
+  justify-self: center;
+}
+
+#mass-logo > *:nth-child(4) {
+  --color-start: color-mix(in srgb, var(--mass-scarlet), #6D1E6F 50%);
+  --color-end: var(--mass-scarlet);
+  --rotation: 210deg;
+  align-self: end;
+}
+
+#mass-logo > *:nth-child(5) {
+  --color-start: color-mix(in srgb, var(--mass-scarlet), #6D1E6F 50%);
+  --color-end: var(--mass-scarlet);
+  --rotation: 30deg;
+  justify-self: center;
+}
+
+#mass-logo > *:nth-child(6) {
+  background: radial-gradient(circle at 50% 18%, #fff 8%, transparent calc(8% + 1px) 0);
+  mask: unset;
+  justify-self: center;
+  z-index: 1;
+}
