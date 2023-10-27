@@ -40,12 +40,10 @@ body {
     background:
       conic-gradient(
         #872363,
-        #6D1E6F,
-        #6D1E6F,
-        #261299,
-        #261299
+        #6D1E6F 25%,
+        #261299 75%,
+        #872363 0
       );
-    rotate: -90deg;
   }
 
   /* Bottom left half-donut */
