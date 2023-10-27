@@ -15,7 +15,7 @@ body {
   > * {
     grid-row: 1;
     grid-column: 1;
-    width: 60.2%; /* approx 146/242 in % */
+    width: 60.13%; /* approx 146/242 in % */
     aspect-ratio: 1;
     border-radius: 50%;
   }
@@ -24,13 +24,13 @@ body {
     background:
       conic-gradient(
         var(--color-start),
-        var(--color-end) calc(50.1%), /* >50% so no gaps */
+        var(--color-end) calc(51%), /* >50% so no gaps */
         transparent 0
       );
 
     /* Chrome still needs prefixed mask & firefox supports it too */
     /* stylelint-disable-next-line property-no-vendor-prefix */
-    -webkit-mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
+    -webkit-mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + 1px));
   }
 
   /* Bottom right donut */
