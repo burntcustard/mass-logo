@@ -11,6 +11,8 @@ body {
   width: 242px;
   height: 229px;
   display: grid;
+  /* Chrome likes to add scrollbars if overflowing */
+  overflow: hidden;
 }
 
 #mass-logo > * {
