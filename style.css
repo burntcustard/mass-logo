@@ -97,57 +97,57 @@ body {
       #fff 8%,
       transparent calc(8% + 1px) 0
     );
-    transform: rotate(-150deg);
-    animation: 4s flume infinite linear;
+    rotate: -150deg;
+    animation: 4s flume infinite linear 1s;
   }
 }
 
 @keyframes flume {
   16% {
     z-index: 5;
-    transform: rotate(30deg);
+    rotate: 30deg;
   }
 
   32% {
     place-self: start center;
-    transform: rotate(210deg);
+    rotate: 210deg;
     animation-timing-function: steps(1, end);
   }
 
   32.01% {
     place-self: end start;
-    transform: rotate(30deg);
+    rotate: 30deg;
   }
 
   48% {
-    transform: rotate(-150deg);
+    rotate: -150deg;
   }
 
   59% {
     place-self: end start;
-    transform: rotate(-270deg);
+    rotate: -270deg;
     animation-timing-function: steps(1, end);
   }
 
   59.01% {
     z-index: 4;
     place-self: end end;
-    transform: rotate(-90deg);
+    rotate: -90deg;
   }
 
   75% {
-    transform: rotate(90deg);
+    rotate: 90deg;
   }
 
   91% {
     place-self: end end;
-    transform: rotate(270deg);
+    rotate: 270deg;
     animation-timing-function: steps(1, end);
   }
 
   91.01% {
     z-index: 1;
     place-self: start center;
-    transform: rotate(-150deg);
+    rotate: -150deg;
   }
 }
