@@ -29,7 +29,8 @@ body {
       );
 
     /* Chrome still needs prefixed mask & firefox supports it too */
-    mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
   }
 
   /* Bottom right donut */
