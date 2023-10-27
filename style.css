@@ -1,6 +1,5 @@
 body {
-  --mass-scarlet: #F9372B;
-  margin: 0;
+  --mass-scarlet: #f9372b;
   background-color: #1e1e1e;
 }
 
@@ -10,139 +9,143 @@ body {
   display: grid;
   /* Chrome likes to add scrollbars if overflowing */
   overflow: hidden;
-}
 
-#mass-logo > * {
-  grid-row: 1;
-  grid-column: 1;
-  width: 60.34%; /* approx 146/242 in % */
-  aspect-ratio: 1;
-  border-radius: 50%;
-  rotate: var(--rotation);
-  background:
-    conic-gradient(
-      var(--color-start) 0,
-      var(--color-end) calc(50.1%), /* >50% so no gaps */
-      transparent 0
+  > * {
+    grid-row: 1;
+    grid-column: 1;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    width: 60.2%; /* approx 146/242 in % */
+  }
+
+  > *:nth-child(-n+5) {
+    background:
+      conic-gradient(
+        var(--color-start),
+        var(--color-end) calc(50.1%), /* >50% so no gaps */
+        transparent 0
+      );
+    /* Chrome still needs prefixed mask & firefox supports it too */
+    -webkit-mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
+  }
+
+  /* Bottom right donut */
+  > *:nth-child(1) {
+    background:
+      conic-gradient(
+        #872363,
+        #6D1E6F,
+        #6D1E6F,
+        #261299,
+        #261299
+      );
+    rotate: -90deg;
+    align-self: end;
+    justify-self: end;
+    z-index: 1;
+  }
+
+  /* Bottom left half-donut */
+  > *:nth-child(2) {
+    --color-start: #6D1E6F;
+    --color-end: #b32a4d;
+    rotate: 30deg;
+    align-self: end;
+    z-index: 2;
+  }
+
+  /* Bottom left half-donut */
+  > *:nth-child(3) {
+    --color-start: #BF2B4B;
+    --color-end: #b32a4d;
+    rotate: 210deg;
+    justify-self: center;
+    z-index: 3;
+  }
+
+  /* Top center half-donut */
+  > *:nth-child(4) {
+    --color-start: #b32a4d;
+    --color-end: var(--mass-scarlet);
+    rotate: 210deg;
+    align-self: end;
+    z-index: 4;
+  }
+
+  /* Top center half-donut */
+  > *:nth-child(5) {
+    --color-start: #b32a4d;
+    --color-end: var(--mass-scarlet);
+    rotate: 30deg;
+    justify-self: center;
+    z-index: 5;
+  }
+
+  /* White ball inside a donut */
+  > *:nth-child(6) {
+    background: radial-gradient(
+      circle at 50% 17.5%,
+      #fff 8%,
+      transparent calc(8% + 1px) 0
     );
-  mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
-  /* Chrome 118 still needs mask with prefix ew */
-  -webkit-mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
-}
+    animation: 4s flume infinite linear;
 
-#mass-logo > *:nth-child(1) {
-  background:
-    conic-gradient(
-      #872363,
-      #6D1E6F,
-      #6D1E6F,
-      #261299,
-      #261299
-    );
-  --rotation: -90deg;
-  align-self: end;
-  justify-self: end;
-  z-index: 1;
-}
-
-#mass-logo > *:nth-child(2) {
-  --color-start: #6D1E6F;
-  --color-end: color-mix(in srgb, var(--mass-scarlet), #6D1E6F 50%);
-  --rotation: 30deg;
-  align-self: end;
-  z-index: 2;
-}
-
-#mass-logo > *:nth-child(3) {
-  --color-start: #BF2B4B;
-  --color-end: color-mix(in srgb, var(--mass-scarlet), #6D1E6F 50%);
-  --rotation: 210deg;
-  justify-self: center;
-  z-index: 3;
-}
-
-#mass-logo > *:nth-child(4) {
-  --color-start: color-mix(in srgb, var(--mass-scarlet), #6D1E6F 50%);
-  --color-end: var(--mass-scarlet);
-  --rotation: 210deg;
-  align-self: end;
-  z-index: 4;
-}
-
-#mass-logo > *:nth-child(5) {
-  --color-start: color-mix(in srgb, var(--mass-scarlet), #6D1E6F 50%);
-  --color-end: var(--mass-scarlet);
-  --rotation: 30deg;
-  justify-self: center;
-  z-index: 5;
-}
-
-#mass-logo > *:nth-child(6) {
-  background: radial-gradient(circle at 50% 17.5%, #fff 8%, transparent calc(8% + 1px) 0);
-  mask: unset;
-  justify-self: center;
-  z-index: 3;
-
-  animation: 4s flume infinite linear;
-
-  transform: rotate(-150deg);
-}
-
-@keyframes flume {
-  0% {
     z-index: 2;
     justify-self: center;
     align-self: start;
     transform: rotate(-150deg);
   }
+}
 
-  15% {
+@keyframes flume {
+  16% {
     z-index: 5;
     transform: rotate(30deg);
   }
 
-  30% {
+  32% {
     transform: rotate(210deg);
     justify-self: center;
     align-self: start;
+    animation-timing-function: steps(1, end);
   }
 
-  30.01% {
+  32.01% {
     transform: rotate(30deg);
     justify-self: start;
     align-self: end;
   }
 
-  45% {
+  48% {
     transform: rotate(-150deg);
   }
 
-  55% {
+  59% {
     transform: rotate(-270deg);
     justify-self: start;
     align-self: end;
+    animation-timing-function: steps(1, end);
   }
 
-  55.01% {
+  59.01% {
     transform: rotate(-90deg);
     justify-self: end;
     align-self: end;
     z-index: 4;
   }
 
-  70% {
+  75% {
     transform: rotate(90deg);
-    z-index: 1;
   }
 
-  85% {
+  91% {
     transform: rotate(270deg);
     justify-self: end;
     align-self: end;
-    z-index: 1;
+    animation-timing-function: steps(1, end);
   }
 
-  85.01% {
+  91.01% {
     z-index: 1;
     justify-self: center;
     align-self: start;
