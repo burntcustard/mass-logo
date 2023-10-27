@@ -1,21 +1,25 @@
-body {
+:root {
   --mass-scarlet: #f9372b;
+}
+
+body {
   background-color: #1e1e1e;
 }
 
 #mass-logo {
+  display: grid;
   width: 242px;
   height: 229px;
-  display: grid;
+
   /* Chrome likes to add scrollbars if overflowing */
   overflow: hidden;
 
   > * {
     grid-row: 1;
     grid-column: 1;
+    width: 60.2%; /* approx 146/242 in % */
     aspect-ratio: 1;
     border-radius: 50%;
-    width: 60.2%; /* approx 146/242 in % */
   }
 
   > *:nth-child(-n+5) {
@@ -25,12 +29,15 @@ body {
         var(--color-end) calc(50.1%), /* >50% so no gaps */
         transparent 0
       );
+
     /* Chrome still needs prefixed mask & firefox supports it too */
-    -webkit-mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
+    mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + .5px), #000);
   }
 
   /* Bottom right donut */
   > *:nth-child(1) {
+    z-index: 1;
+    place-self: end end;
     background:
       conic-gradient(
         #872363,
@@ -40,60 +47,59 @@ body {
         #261299
       );
     rotate: -90deg;
-    align-self: end;
-    justify-self: end;
-    z-index: 1;
   }
 
   /* Bottom left half-donut */
   > *:nth-child(2) {
     --color-start: #6D1E6F;
     --color-end: #b32a4d;
-    rotate: 30deg;
-    align-self: end;
+
     z-index: 2;
+    align-self: end;
+    rotate: 30deg;
   }
 
   /* Bottom left half-donut */
   > *:nth-child(3) {
     --color-start: #BF2B4B;
     --color-end: #b32a4d;
-    rotate: 210deg;
-    justify-self: center;
+
     z-index: 3;
+    justify-self: center;
+    rotate: 210deg;
   }
 
   /* Top center half-donut */
   > *:nth-child(4) {
     --color-start: #b32a4d;
     --color-end: var(--mass-scarlet);
-    rotate: 210deg;
-    align-self: end;
+
     z-index: 4;
+    align-self: end;
+    rotate: 210deg;
   }
 
   /* Top center half-donut */
   > *:nth-child(5) {
     --color-start: #b32a4d;
     --color-end: var(--mass-scarlet);
-    rotate: 30deg;
-    justify-self: center;
+
     z-index: 5;
+    justify-self: center;
+    rotate: 30deg;
   }
 
   /* White ball inside a donut */
   > *:nth-child(6) {
+    z-index: 2;
+    place-self: start center;
     background: radial-gradient(
       circle at 50% 17.5%,
       #fff 8%,
       transparent calc(8% + 1px) 0
     );
-    animation: 4s flume infinite linear;
-
-    z-index: 2;
-    justify-self: center;
-    align-self: start;
     transform: rotate(-150deg);
+    animation: 4s flume infinite linear;
   }
 }
 
@@ -104,16 +110,14 @@ body {
   }
 
   32% {
+    place-self: start center;
     transform: rotate(210deg);
-    justify-self: center;
-    align-self: start;
     animation-timing-function: steps(1, end);
   }
 
   32.01% {
+    place-self: end start;
     transform: rotate(30deg);
-    justify-self: start;
-    align-self: end;
   }
 
   48% {
@@ -121,17 +125,15 @@ body {
   }
 
   59% {
+    place-self: end start;
     transform: rotate(-270deg);
-    justify-self: start;
-    align-self: end;
     animation-timing-function: steps(1, end);
   }
 
   59.01% {
-    transform: rotate(-90deg);
-    justify-self: end;
-    align-self: end;
     z-index: 4;
+    place-self: end end;
+    transform: rotate(-90deg);
   }
 
   75% {
@@ -139,16 +141,14 @@ body {
   }
 
   91% {
+    place-self: end end;
     transform: rotate(270deg);
-    justify-self: end;
-    align-self: end;
     animation-timing-function: steps(1, end);
   }
 
   91.01% {
     z-index: 1;
-    justify-self: center;
-    align-self: start;
+    place-self: start center;
     transform: rotate(-150deg);
   }
 }

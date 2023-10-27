@@ -7,11 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "semistandard --verbose | snazzy"
+    "lint": "semistandard --verbose | snazzy && stylelint style.css"
   },
   "devDependencies": {
     "semistandard": "^17.0.0",
     "snazzy": "^9.0.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard": "^34.0.0",
     "vite": "^4.4.5"
   },
   "repository": {
