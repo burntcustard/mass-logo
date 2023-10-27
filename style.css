@@ -1,8 +1,5 @@
-:root {
-  --mass-scarlet: #F9372B;
-}
-
 body {
+  --mass-scarlet: #F9372B;
   margin: 0;
   background-color: #1e1e1e;
 }
