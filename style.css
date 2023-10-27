@@ -10,8 +10,6 @@ body {
   display: grid;
   width: 242px;
   height: 229px;
-
-  /* Chrome likes to add scrollbars if overflowing */
   overflow: hidden;
 
   > * {
