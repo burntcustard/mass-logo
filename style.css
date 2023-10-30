@@ -1,5 +1,10 @@
 :root {
   --mass-scarlet: #f9372b;
+  --blue: #261299;
+  --dark-pink: #872363;
+  --pink-red: #BF2B4B;
+  --purple: #6D1E6F;
+  --red-purple: #b32a4d;
 }
 
 body {
@@ -41,66 +46,62 @@ body {
     place-self: end end;
     background:
       conic-gradient(
-        #872363,
-        #6D1E6F 25%,
-        #261299 75%,
-        #872363 0
+        var(--dark-pink),
+        var(--purple) 25%,
+        var(--blue) 75%,
+        var(--dark-pink) 0
       );
   }
 
-  /* Bottom left half-donut */
+  /* Bottom left donut */
   > *:nth-child(2) {
-    background:
-      conic-gradient(
-        #6D1E6F,
-        #b32a4d,
-        var(--mass-scarlet)
-      );
-
     z-index: 2;
     align-self: end;
+    background:
+      conic-gradient(
+        var(--dark-pink) 12%,
+        var(--red-purple) 50%,
+        var(--mass-scarlet)
+      );
     rotate: 30deg;
   }
 
   /* Top center donut */
   > *:nth-child(3) {
-    background:
-      conic-gradient(
-        #BF2B4B,
-        #b32a4d,
-        var(--mass-scarlet)
-      );
-
     z-index: 3;
     justify-self: center;
+    background:
+      conic-gradient(
+        var(--pink-red),
+        var(--red-purple),
+        var(--mass-scarlet)
+      );
     rotate: 210deg;
   }
 
   /* Bottom left half-donut */
   > *:nth-child(4) {
+    z-index: 4;
+    align-self: end;
     background:
       conic-gradient(
-        #b32a4d,
+        var(--red-purple),
         var(--mass-scarlet) 51%, /* >50% so no gaps */
         transparent 0
       );
-
-    z-index: 4;
-    align-self: end;
     rotate: 210deg;
   }
 
   /* Top center half-donut */
   > *:nth-child(5) {
+    z-index: 5;
+    justify-self: center;
     background:
       conic-gradient(
-        #b32a4d,
+        var(--red-purple),
         var(--mass-scarlet) 51%, /* >50% so no gaps */
         transparent 0
       );
-
-    z-index: 5;
-    justify-self: center;
     rotate: 30deg;
   }
 
