@@ -109,11 +109,7 @@ body {
   > *:nth-child(6) {
     z-index: 2;
     place-self: start center;
-    background: radial-gradient(
-      circle at 50% 17.5%,
-      #fff 8%,
-      transparent calc(8% + .5px)
-    );
+    background: radial-gradient(circle at 50% 17.5%, #fff 8%, #0000 calc(8% + .5px));
     rotate: -150deg;
     animation: 4s flume infinite linear 1s;
   }
