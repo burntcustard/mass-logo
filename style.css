@@ -28,14 +28,13 @@ body {
     radial-gradient(94% 100% at 30% 68.6%, #0000 10.4%, #000 calc(10.4% + .5px)),
     radial-gradient(94% 100% at 70% 68.6%, #0000 10.4%, #000 calc(10.4% + .5px));
   mask:
-    radial-gradient(94% 100% at 50% 31.3%, #0000 10.4%, #000 calc(10.4% + .5px)),
-    radial-gradient(94% 100% at 30% 68.6%, #0000 10.4%, #000 calc(10.4% + .5px)),
+    radial-gradient(94% 100% at 50% 31.3%, #0000 10.4%, #000 calc(10.4% + .5px)) intersect,
+    radial-gradient(94% 100% at 30% 68.6%, #0000 10.4%, #000 calc(10.4% + .5px)) intersect,
     radial-gradient(94% 100% at 70% 68.6%, #0000 10.4%, #000 calc(10.4% + .5px));
 
   /* Chrome needs it's old mask-composite syntax rather than the standardised syntax */
   /* stylelint-disable-next-line property-no-vendor-prefix */
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+  -webkit-mask-composite: source-in, source-in, xor;
 
   > * {
     grid-row: 1;
