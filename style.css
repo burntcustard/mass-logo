@@ -35,15 +35,6 @@ body {
     border-radius: 50%;
   }
 
-  > *:nth-child(-n+5) {
-    background:
-      conic-gradient(
-        var(--color-start),
-        var(--color-end) calc(51%), /* >50% so no gaps */
-        transparent 0
-      );
-  }
-
   /* Bottom right donut */
   > *:nth-child(1) {
     z-index: 1;
@@ -59,28 +50,40 @@ body {
 
   /* Bottom left half-donut */
   > *:nth-child(2) {
-    --color-start: #6D1E6F;
-    --color-end: #b32a4d;
+    background:
+      conic-gradient(
+        #6D1E6F,
+        #b32a4d,
+        var(--mass-scarlet)
+      );
 
     z-index: 2;
     align-self: end;
     rotate: 30deg;
   }
 
-  /* Bottom left half-donut */
+  /* Top center donut */
   > *:nth-child(3) {
-    --color-start: #BF2B4B;
-    --color-end: #b32a4d;
+    background:
+      conic-gradient(
+        #BF2B4B,
+        #b32a4d,
+        var(--mass-scarlet)
+      );
 
     z-index: 3;
     justify-self: center;
     rotate: 210deg;
   }
 
-  /* Top center half-donut */
+  /* Bottom left half-donut */
   > *:nth-child(4) {
-    --color-start: #b32a4d;
-    --color-end: var(--mass-scarlet);
+    background:
+      conic-gradient(
+        #b32a4d,
+        var(--mass-scarlet) 51%, /* >50% so no gaps */
+        transparent 0
+      );
 
     z-index: 4;
     align-self: end;
@@ -89,8 +92,12 @@ body {
 
   /* Top center half-donut */
   > *:nth-child(5) {
-    --color-start: #b32a4d;
-    --color-end: var(--mass-scarlet);
+    background:
+      conic-gradient(
+        #b32a4d,
+        var(--mass-scarlet) 51%, /* >50% so no gaps */
+        transparent 0
+      );
 
     z-index: 5;
     justify-self: center;
@@ -104,7 +111,7 @@ body {
     background: radial-gradient(
       circle at 50% 17.5%,
       #fff 8%,
-      transparent calc(8% + 1px) 0
+      transparent calc(8% + .5px) 0
     );
     rotate: -150deg;
     animation: 4s flume infinite linear 1s;
