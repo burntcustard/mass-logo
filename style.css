@@ -8,9 +8,24 @@ body {
 
 #mass-logo {
   display: grid;
-  width: 242px;
-  height: 229px;
+  max-width: 242px;
+  aspect-ratio: 1.06;
   overflow: hidden;
+
+  /* Chrome still needs prefixed mask & firefox supports it too */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-mask:
+
+    /* Each gradient is an ellipse with width 94% to compensate for the 1.06 aspect ratio */
+    /* ellipses must be used instead of circles for accurate size and positioning */
+    radial-gradient(94% 100% at 50% 31.3%, #0000 10.4%, #000 calc(10.4% + .5px)),
+    radial-gradient(94% 100% at 30% 68.5%, #0000 10.4%, #000 calc(10.4% + .5px)),
+    radial-gradient(94% 100% at 70% 68.5%, #0000 10.4%, #000 calc(10.4% + .5px));
+
+  /* Chrome needs it's old mask-composite syntax rather than the standardised syntax */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 
   > * {
     grid-row: 1;
@@ -27,10 +42,6 @@ body {
         var(--color-end) calc(51%), /* >50% so no gaps */
         transparent 0
       );
-
-    /* Chrome still needs prefixed mask & firefox supports it too */
-    /* stylelint-disable-next-line property-no-vendor-prefix */
-    -webkit-mask: radial-gradient(#0000 22.5%, #000 calc(22.5% + 1px));
   }
 
   /* Bottom right donut */
